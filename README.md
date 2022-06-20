@@ -5,6 +5,8 @@ Download: https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/releases
 
 Files raw:  [https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/tree/VR-HD-Remastered/](https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/tree/VR-HD-Remastered/l4d2%20-%20left4dead2%20-%20cfg)
 
+Demo: https://youtu.be/rcQBNVXs6Fg?t=44
+
 drop files in  Game Directory > left4dead2 > cfg
 
 set launch options:
