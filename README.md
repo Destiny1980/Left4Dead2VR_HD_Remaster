@@ -16,6 +16,8 @@ drop files in   "\Left 4 Dead 2\left4dead2\cfg" - usually C:\program files (86)\
 set launch options:
 -insecure  -console +exec autoexec.cfg -precache_all_survivors 1  -useallavailablecores -window -novid -mat_motion_blur_percent_of_screen_max 0 -lv -refresh 120 -vphysics_client_threaded_min_cpus 4   vphysics_client_threaded 1
 
+IF NOTHING ELSE, MULTICORE RENDERING MUST BE OFF IN GAME. 
+
  optional hd textures downloads  
 
 https://www.nexusmods.com/left4dead2/mods/84?tab=files&file_id=132
