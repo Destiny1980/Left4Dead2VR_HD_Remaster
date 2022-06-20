@@ -1,6 +1,8 @@
 
 Forked from Main VR Mod for Left 4 Dead 2. This is a configuration that sits on top of the original mod, you will need it for this mod to work. [Find it here](https://github.com/sd805/l4d2vr). 
 
+[Demo Video](https://youtu.be/rcQBNVXs6Fg?t=44)
+
 ***Alpha stages of building and testing. This should be functional but I need feedback.***. 
 
 This provides CPU optimization, graphics improvements from other mods, and overall great baseline performance. 
