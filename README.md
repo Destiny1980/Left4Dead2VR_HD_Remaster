@@ -5,21 +5,21 @@ Forked from Main VR Mod for Left 4 Dead 2. This is a configuration that sits on 
 
 This provides CPU optimization, graphics improvements from other mods, and overall great baseline performance. 
 
-Download: https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/releases
+- Download: [Releases](https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/releases)
 
-Files raw:  [https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/tree/VR-HD-Remastered/](https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/tree/VR-HD-Remastered/l4d2%20-%20left4dead2%20-%20cfg)
+- Files raw:  [Git](https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/tree/VR-HD-Remastered/l4d2%20-%20left4dead2%20-%20cfg)
 
-Demo: https://youtu.be/rcQBNVXs6Fg?t=44
+[Demo Video](https://youtu.be/rcQBNVXs6Fg?t=44)
 
-drop files in   "\Left 4 Dead 2\left4dead2\cfg" - usually C:\program files (86)\Steam\Steamapps\Common\ -
+- Drop files in   "\Left 4 Dead 2\left4dead2\cfg" - usually C:\program files (86)\Steam\Steamapps\Common\ -
 
-set launch options:
+- Set launch options:
 -insecure  -console +exec autoexec.cfg -precache_all_survivors 1  -useallavailablecores -window -novid -mat_motion_blur_percent_of_screen_max 0 -lv -refresh 120 -vphysics_client_threaded_min_cpus 4   vphysics_client_threaded 1
 
 IF NOTHING ELSE, MULTICORE RENDERING MUST BE OFF IN GAME. 
 
 
-Optional hd textures downloads  
+Optional but highly ecouraged hd textures downloads, otherwise the game is just optimized for low end pc. 
 
  - HD Retexture pack
  - https://www.nexusmods.com/left4dead2/mods/84?tab=files&file_id=132
