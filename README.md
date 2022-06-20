@@ -13,6 +13,12 @@ This provides CPU optimization, graphics improvements from other mods, and overa
 
 [Demo Video](https://youtu.be/rcQBNVXs6Fg?t=44)
 
+Instructions: 
+
+- Download main (VR Mod from here if you havent already)[https://github.com/sd805/l4d2vr] 
+
+- Download this mod
+
 - Drop files in   "\Left 4 Dead 2\left4dead2\cfg" - usually C:\program files (86)\Steam\Steamapps\Common\ -
 
 - Set launch options:
