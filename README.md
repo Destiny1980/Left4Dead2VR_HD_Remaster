@@ -18,13 +18,15 @@ set launch options:
 
 IF NOTHING ELSE, MULTICORE RENDERING MUST BE OFF IN GAME. 
 
- optional hd textures downloads  
 
-https://www.nexusmods.com/left4dead2/mods/84?tab=files&file_id=132
+Optional hd textures downloads  
 
-HD Retexture pack - takes forever to downlaod so I uploaded to [my drive](https://drive.google.com/file/d/1OZ03HK9a5lNiir3I9vPcJLxOqWUDNNBj/view?usp=sharing). 
+  HD Retexture pack
+  https://www.nexusmods.com/left4dead2/mods/84?tab=files&file_id=132
 
-steam mod downloaded https://steamworkshopdownloader.io/
+ - takes forever to downlaod so I uploaded to [my drive](https://drive.google.com/file/d/1OZ03HK9a5lNiir3I9vPcJLxOqWUDNNBj/view?usp=sharing). 
+
+steam mod download tool https://steamworkshopdownloader.io/
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=1985083323 
 Environment (Part 1 of 2) [ 4k / Full HD ]
