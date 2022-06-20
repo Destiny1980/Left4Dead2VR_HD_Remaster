@@ -21,6 +21,7 @@ IF NOTHING ELSE, MULTICORE RENDERING MUST BE OFF IN GAME.
  optional hd textures downloads  
 
 https://www.nexusmods.com/left4dead2/mods/84?tab=files&file_id=132
+
 HD Retexture pack - takes forever to downlaod so I uploaded to [my drive](https://drive.google.com/file/d/1OZ03HK9a5lNiir3I9vPcJLxOqWUDNNBj/view?usp=sharing). 
 
 steam mod downloaded https://steamworkshopdownloader.io/
