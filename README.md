@@ -9,7 +9,7 @@ Files raw:  [https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/tree/VR-HD
 
 Demo: https://youtu.be/rcQBNVXs6Fg?t=44
 
-drop files in  Game Directory > left4dead2 > cfg
+drop files in  usually C:\program files (86)\Steam\Steamapps\Common\ - "\Left 4 Dead 2\left4dead2\cfg"
 
 set launch options:
 -insecure  -console +exec autoexec.cfg -precache_all_survivors 1  -useallavailablecores -window -novid -mat_motion_blur_percent_of_screen_max 0 -lv -refresh 120 -vphysics_client_threaded_min_cpus 4   vphysics_client_threaded 1
