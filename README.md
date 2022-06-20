@@ -22,5 +22,6 @@ Environment (Part 1 of 2) [ 4k / Full HD ]
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=312294075&searchtext=
 
+in game settings
 
 ![image](https://user-images.githubusercontent.com/98753696/174659081-3de58da0-b556-4843-a8f1-eca6a13aeeec.png)
