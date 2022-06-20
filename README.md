@@ -1,4 +1,5 @@
-Download: https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/tree/VR-HD-Remastered/l4d2%20-%20left4dead2%20-%20cfg
+Download: https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/blob/VR-HD-Remastered/l4d2%20-%20left4dead2%20-%20cfg%20.rar
+Files raw:  https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/tree/VR-HD-Remastered/l4d2%20-%20left4dead2%20-%20cfg
 
 drop files in  Game Directory > left4dead2 > cfg
 
