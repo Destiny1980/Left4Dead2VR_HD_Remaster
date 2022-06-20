@@ -25,6 +25,7 @@ Instructions:
 -insecure  -console +exec autoexec.cfg -precache_all_survivors 1  -useallavailablecores -window -novid -mat_motion_blur_percent_of_screen_max 0 -lv -refresh 120 -vphysics_client_threaded_min_cpus 4   vphysics_client_threaded 1
 
 - 5 Match in game settings with this [image](https://user-images.githubusercontent.com/98753696/174659081-3de58da0-b556-4843-a8f1-eca6a13aeeec.png). 
+- 6 Download HD mods from links below or subscribe on steam. 
 
 Optional but highly ecouraged hd textures downloads, otherwise the game is just optimized for low end pc. 
 
