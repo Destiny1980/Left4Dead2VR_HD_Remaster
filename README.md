@@ -45,3 +45,8 @@ steam mod download tool https://steamworkshopdownloader.io/
 in game settings
 
 ![image](https://user-images.githubusercontent.com/98753696/174659081-3de58da0-b556-4843-a8f1-eca6a13aeeec.png)
+
+My goal it to eventually config and install with a home brewed mod manager:
+ https://i.postimg.cc/PrJZ0cRv/image.png
+
+
