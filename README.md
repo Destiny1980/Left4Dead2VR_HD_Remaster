@@ -3,6 +3,10 @@ Forked from Main VR Mod for Left 4 Dead 2. This is a configuration that sits on 
 
 [Demo Video](https://youtu.be/rcQBNVXs6Fg?t=44)
 
+Stalvey#1836 — 6/21/2022 at 7:49 AM
+"Hey I tried your mod with your exact settings and it was running much better. Basically 120fps constant with drops to high 80s low 90s during waves. Overall much more consistent."
+
+
 ***Beta stages of building and testing. This should be functional but I need feedback.***. 
 
 This provides CPU optimization, graphics improvements from other mods, and overall great baseline performance. 
