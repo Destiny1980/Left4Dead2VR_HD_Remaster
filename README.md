@@ -47,7 +47,7 @@ steam mod download tool https://steamworkshopdownloader.io/
 
  - https://steamcommunity.com/sharedfiles/filedetails/?id=312294075&searchtext=
 
-in game settings
+in game settings (1080p, 2k, 4kw works):
 
 ![image](https://user-images.githubusercontent.com/98753696/174659081-3de58da0-b556-4843-a8f1-eca6a13aeeec.png)
 
