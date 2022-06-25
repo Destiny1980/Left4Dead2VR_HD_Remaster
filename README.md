@@ -3,9 +3,11 @@ Forked from Main VR Mod for Left 4 Dead 2. This is a configuration that sits on 
 
 [Demo Video](https://youtu.be/rcQBNVXs6Fg?t=44)
 
-Stalvey#ask Discord — 6/21/2022 at 7:49 AM
+New installer and launcher: 
 
-"Hey I tried your mod with your exact settings and it was running much better. Basically 120fps constant with drops to high 80s low 90s during waves. Overall much more consistent."
+![image](https://user-images.githubusercontent.com/98753696/175767731-08b20410-3bea-40fc-972f-b2a3977eceb1.png)
+
+https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/releases/tag/v0.1.01
 
 
 ***Beta stages of building and testing. This should be functional but I need feedback.***. 
