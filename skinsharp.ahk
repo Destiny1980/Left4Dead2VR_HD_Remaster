@@ -1,31 +1,29 @@
-﻿; Dll文件在此下载 https://github.com/CodyGuo/skinh
-; 官方说明与皮肤文件 http://www.skinsharp.com/htdocs/docs.htm
-#SingleInstance Force 
-SetTitleMatchMode, 2
- 
-; 强制使用32位运行
-if !(A_IsUnicode=1 and A_PtrSize=4)
-{
-	SplitPath, A_AhkPath, , dir
-	Run, %dir%\AutoHotkeyU32.exe "%A_ScriptFullPath%"		;必须加引号，否则文件名中含空格的文件无法识别
-	ExitApp
-}
-
+﻿ 
 ; SkinH.dll for ansi.
 ; SkinHu.dll for unicode32.
 ; There is no trial version of x64, the only way i know is pay for it.
 hSkinH := DllCall("LoadLibrary", "Str", "SkinHu.dll")
 DllCall("SkinHu\SkinH_AttachEx", "Str", A_ScriptDir "\skins\darkroyale.she")
  
-#SingleInstance Force
+if !(A_IsUnicode=1 and A_PtrSize=4)
+{
+	SplitPath, A_AhkPath, , dir
+	Run, %dir%\AutoHotkeyU32.exe "%A_ScriptFullPath%"		;必须加引号，否则文件名中含空格的文件无法识别
+	ExitApp
+}
+#SingleInstance Force 
+SetTitleMatchMode, 2 
 #NoEnv
 SetWorkingDir %A_ScriptDir%
 SetBatchLines -1
+#WinActivateForce
+
+  
 
 GuiStart:
 Gui Add, Picture, x0 y-104 w732 h583 0x6 +Border, asdasdas.png
 Gui Add, Button, x96 y304 w217 h53 gLaunch, Launch Game
-Gui Add, Button, x456 y304 w236 h54 gVRMode, Engage VR Mode
+Gui Add, Button, x456 y304 w236 h54 gVRSecondMessage, Engage VR Mode
 
 Gui Add, Text, x64 y536 w293 h421, 1. Enter Steam VR Desktop Viewer `n2. Launch game from this GUI `n3. Navigate game menu from SteamVR Desktop Viewer `n4. When loading screen is done, Click Enter VR Mode`n`nCredit to @Kem and @SpecialAgentinChargeWd40 of the Flatscreen2VR discord with special thanks to Elliotttate.`n`n 
 Gui Add, Link, x104 y698 w120 h23,  
@@ -39,6 +37,13 @@ Return
 
 Launch:
 run, "Left 4 Dead 2 VR.url"
+Sleep 5000
+Winactivate, Left 4 Dead 2
+MsgBox,  262144, DO NOT CLOSE UNTIL READY TO ENTER VR, Leave this window open while you navigate the game's menu. When you select a map and it finishes loading, click "Okay" to enter VR Mode. 
+IfMsgBox, Yes
+{
+	Goto, VRMode
+}
 return
 
 Install:
@@ -58,9 +63,11 @@ Msgbox, Select Game Directory
 Run, %A_ScriptDir%./install/install.exe
 return
 
+VRSecondMessage:
+MsgBox,  262144, DO NOT CLOSE UNTIL READY TO ENTER VR, Leave this window open while you navigate the game's menu. When you select a map and it finishes loading, click "Okay" to enter VR Mode. 
 VRMode:
 Sleep, 500
-Winactivate, Left 4 Dead 2 VR
+WinActivate, Left 4 Dead 2
 Sleep, 1000
 Send, {F6 down}
 Sleep, 500
