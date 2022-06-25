@@ -1,0 +1,114 @@
+﻿2015/02/03 + Added SkinH.dll, modified the article
+
+Currently, There are 2 methods for GUI skinning
+
+#1 USkin based on SKAN's USkin article
+Image
+
+Requirement : download via my blog (blog is written in Korean so I'll give u direct link below)
+
+USkin.dll http://knowledgeisfree.tistory.com/atta ... 2E0DF4.dll
+.msstyles(THEME file) All in one ZIP file! (I've collected) http://knowledgeisfree.tistory.com/atta ... 048C49.zip
+.msstyles(THEME file) I used in above screenshot http://knowledgeisfree.tistory.com/atta ... 2.msstyles
+
+or All in one 'USkin ArchivePack' by 'joedf' http://ge.tt/8zMaRUW1?c
+
+SkinForm.ahk (Lib file)
+Code: Select all - Download - Toggle Line numbers
+
+SkinForm(Param1 = "Apply", DLL = "", SkinName = ""){
+	if(Param1 = Apply){
+		DllCall("LoadLibrary", str, DLL)
+		DllCall(DLL . "\USkinInit", Int,0, Int,0, AStr, SkinName) ; For Unicode AHK
+		;DllCall(DLL . "\USkinInit", Int,0, Int,0, Str, SkinName) ; For ANSI AHK
+	}else if(Param1 = 0){
+		DllCall(DLL . "\USkinExit")
+		}
+}
+PUT Lib file in Autohotkey\Lib or use #Include
+
+How To:
+to Skin your Gui write this code on top of your script, remeber you have to set .msstyles name!
+SkinForm(Apply, A_ScriptDir . "\USkin.dll", A_ScriptDir . "\FileNameHere.msstyles")
+
+when exitting you have to
+SkinForm(0)
+in order to close the USkin.dll
+
+Example: Using .msstyles that was used in screenshot
+Code: Select all - Expand View - Download - Toggle Line numbers
+
+#NoEnv
+#SingleInstance force
+SkinForm(Apply, A_ScriptDir . "\USkin.dll", A_ScriptDir . "\Milikymac.msstyles")
+OnExit, GetOut
+Gui, add, button,xm w100 h40, Button
+Gui, add, edit, xm y+20 w100 h20, Edit
+Gui, add, listbox,xm y+20, ListBox
+Gui, add, checkbox,xm y+20, checkbox
+Gui, add, DDL, xm y+20, DropDownList
+Gui, Show, AutoSize, Test
+return
+
+GetOut:
+GuiClose:
+Gui, Hide
+SkinForm(0)
+ExitApp
+return
+
+SkinForm(Param1 = "Apply", DLL = "", SkinName = ""){
+	if(Param1 = Apply){
+		DllCall("LoadLibrary", str, DLL)
+		DllCall(DLL . "\USkinInit", Int,0, Int,0, AStr, SkinName)
+	}else if(Param1 = 0){
+		DllCall(DLL . "\USkinExit")
+		}
+}
+#2 SkinSharp
+
+Image
+
+2015/02/03 - I found this dll in AutoIt forum. And ported to AutoHotkey
+
+Requirement
+http://knowledgeisfree.tistory.com/atta ... 2DDA49.zip
+Examples are included.
+
+How To
+to skin your project, write the code on top of your script and remember to change ThemeFileName!
+DllCall(A_ScriptDir "\SkinH_AttachEx", AStr,A_ScriptDir "\ThemeFileName.she", Str,"mhgd")
+Code: Select all - Expand View - Download - Toggle Line numbers
+
+DllCall("LoadLibrary", str, A_ScriptDir "\SkinH_EL.dll") ;Opens the DLL
+DllCall(A_ScriptDir "\SkinH_AttachEx", AStr,A_ScriptDir "\ThemeFileName.she", Str,"mhgd")
+/*
+ SkinH_AttachEx - Changes GUI
+ SkinH_AttachExt - Changes GUI, bright, fonts and more (not Implemented? I'm trying to figure out)
+ 
+===SkinH_EL.dll Function List
+SkinH_AdjustAero			5004960
+SkinH_AdjustHSV			5004912
+SkinH_Attach			5004720
+SkinH_AttachEx			5004736
+SkinH_AttachExt			5004768
+SkinH_AttachRes			5004816
+SkinH_AttachResEx			5004864
+SkinH_Detach			5005136
+SkinH_DetachEx			5005152
+SkinH_GetColor			5005168
+SkinH_LockUpdate			5005072
+SkinH_Map			5005104
+SkinH_NineBlt			5005280
+SkinH_SetAero			5004944
+SkinH_SetBackColor			5005440
+SkinH_SetFont			5005328
+SkinH_SetFontEx			5005360
+SkinH_SetForeColor			5005472
+SkinH_SetMenuAlpha			5005024
+SkinH_SetTitleMenuBar			5005232
+SkinH_SetWindowAlpha			5005040
+SkinH_SetWindowMovable			5005200
+SkinH_VerifySign			5005504
+/*
+
