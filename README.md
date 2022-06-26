@@ -10,7 +10,7 @@ New installer and launcher:
 https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/releases/tag/v0.1.01
 
 
-***Beta stages of building and testing. This should be functional but I need feedback.***. 
+***Beta stages of building and testing.***. 
 
 This provides CPU optimization, graphics improvements from other mods, and overall great baseline performance. 
 
