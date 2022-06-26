@@ -1,6 +1,8 @@
 
 Forked from Main VR Mod for Left 4 Dead 2. This is a configuration that sits on top of the original mod. [Find it here](https://github.com/sd805/l4d2vr). 
 
+Updated read me section: https://beastsaber.notion.site/beastsaber/L4D2-VR-Getting-Started-1596dd5d12bb41e98c9951f53416f9c2
+
 [Demo Video](https://youtu.be/rcQBNVXs6Fg?t=44)
 
 New installer and launcher: 
