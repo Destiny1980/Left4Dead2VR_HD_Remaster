@@ -1,16 +1,9 @@
 
 Forked from Main VR Mod for Left 4 Dead 2. This is a configuration that sits on top of the original mod. [Find it here](https://github.com/sd805/l4d2vr). 
 
-Updated read me section: https://beastsaber.notion.site/beastsaber/L4D2-VR-Getting-Started-1596dd5d12bb41e98c9951f53416f9c2
+[Plain text readme](https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/blob/main/L4D2VR%20files/README.md)
 
 [Demo Video](https://youtu.be/rcQBNVXs6Fg?t=44)
-
-New installer and launcher: 
-
-![image](https://user-images.githubusercontent.com/98753696/175767731-08b20410-3bea-40fc-972f-b2a3977eceb1.png)
-
-https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/releases/tag/v0.1.01
-
 
 ***Beta stages of building and testing.***. 
 
@@ -36,6 +29,11 @@ Instructions:
 - 5) Match in game settings with this [image](https://user-images.githubusercontent.com/98753696/174659081-3de58da0-b556-4843-a8f1-eca6a13aeeec.png). 
 
 - 6) Download HD mods from links below or subscribe on steam. 
+
+New installer and launcher: 
+
+![image](https://user-images.githubusercontent.com/98753696/175767731-08b20410-3bea-40fc-972f-b2a3977eceb1.png)
+
 
 Optional but highly ecouraged hd textures downloads, otherwise the game is just optimized for low end pc. 
 
