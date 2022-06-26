@@ -1,10 +1,8 @@
-How to download and install.
+How to download and install. 
 
-Downloading- This mod is currently split between myself and SD805, and we will soon be aligning on a combined place for releases.
+Part 1) Get SD805’s latest release here https://github.com/sd805/l4d2vr
 
-Part 1) Get SD805’s latest release here
-
-Part 2) Snag my latest release here
+Part 2) Snag my latest release here https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/releases
 
 These two mods work in tandem. **If you wish to automatically install the mod, skip to 3b)** below.
 
