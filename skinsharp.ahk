@@ -1,4 +1,4 @@
-﻿hSkinH := DllCall("LoadLibrary", "Str", "SkinHu.dll")
+hSkinH := DllCall("LoadLibrary", "Str", "SkinHu.dll")
 DllCall("SkinHu\SkinH_AttachEx", "Str", A_ScriptDir "\skins\darkroyale.she")
 if !(A_IsUnicode=1 and A_PtrSize=4)
 {
@@ -24,32 +24,20 @@ GuiStart:
     Gui Add, Link, x64 y640 w120 h23, <a href="https://github.com/sd805/l4d2vr">github.com.com</a>
     Gui Add, Button, x96 y394 w217 h53 gInstall, Install Mod 
 
-    Gui Show, w715 h696, LeftVRDead2- Installer and Launcher
+    Gui Show, w715 h696, LeftVRDead2 VR - Launcher and Installer  
 Return
 
 Launch:
     run, "l4d2.bat"
-    Sleep 5000
+    Winwait, Left 4 Dead 2
     Winactivate, Left 4 Dead 2
-    Sleep 5000
-    Winactivate, Left 4 Dead 2
-    Sleep 5000
+    Sleep, 1000
     Sendinput, ``
-    MsgBox, 262144, DO NOT CLOSE UNTIL READY TO ENTER VR, Open SteamVR Desktop Viewer. Leave this window open while you navigate the game's menu. When you select a map and it finishes loading, click "Okay" to enter VR Mode. 
-        Settimer, wexist,1000
-wexist:
-    if WinExist("DO NOT CLOSE UNTIL")
-    {
-        WinActivate, DO NOT CLOSE UNTIL READY TO ENTER VR
+    MsgBox, 262144, DO NOT CLOSE UNTIL READY TO ENTER VR, Leave this window open while you navigate the game's menu. When you select a map and it finishes loading, click "Okay" to enter VR Mode. 
         IfMsgBox, Yes
-        {
-            Goto, VRMode
-        }
-        Else
-            return
+    {
+        Goto, VRMode
     }
-    else, 
-        settimer, wexist, off
 return
 
 Install:
@@ -103,4 +91,4 @@ VRSecondMessage:
     GuiClose:
     ExitApp
     Return
-
+`
