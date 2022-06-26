@@ -1,0 +1,709 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>L4D2 VR Getting Started</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b2f19e3e-4e51-4bca-abab-d6591fd9cde9" class="page sans"><header><img class="page-cover-image" src="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/https___s3-us-west-2.amazonaws.com_secure.notion-static.com_91184a66-4634-454c-a83b-0b59ec4c97a9_IogRcVv_(1).png" style="object-position:center 93.61%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">♠️</span></div><h1 class="page-title">L4D2 VR Getting Started</h1></header><div class="page-body"><figure id="ceb6d704-60a8-4e71-86c9-cf24d633514b" class="image"><a href="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/ezgif.com-gif-maker-2.gif"><img style="width:540px" src="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/ezgif.com-gif-maker-2.gif"/></a></figure><p id="df84614b-df2b-4c5c-824a-b1b2b1d9666d" class="">
+</p><p id="4c033a7e-6169-44ac-8447-30777e9ba0f4" class="">The iconic zombie-shooter is back, in 3D! It’s time to immerse yourself in the concrete jungle of Left 4 Dead 2. The sequel to Turtle Rock Studio&#x27;s Left 4 Dead was released for Microsoft Windows and Xbox 360 in November 2009. Since then, it has gained an occult following. This is what brought myself (samfisherirl), SpecialAgentinChargeWD40, and SD805 together to create the mod you have access to today. </p><figure id="13b39103-e973-411f-9b10-419bcf34bbea" class="image"><a href="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/download.gif"><img style="width:1px" src="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/download.gif"/></a></figure><div id="b3743bc9-b14b-4aa6-81b4-0164b2a4fd77" class="column-list"><div id="c9d9fbfa-06d7-4ade-8f4e-39e85d4033e9" style="width:43.75%" class="column"><p id="d646ea00-cc05-49ca-835e-488e4d5e8f80" class="">All development credit goes to SD805 (aka Kem on discord), the man with the magic. Bringing to life things no one else could! Myself and SpecialAgentinChargeWD40 bring skills that helped put a bow on a beautiful project by making it easier to install and tweaking it to run better. SACWD is accredited with all graphics, trailers, and logos. I had my hand in configuring CPU optimization, GUIs, installers, and overall aesthetic performance. </p></div><div id="886f574f-7fcb-42ed-a5d0-3f7988025266" style="width:56.25%" class="column"><figure id="79d0af03-1157-4088-ae4d-93cfb9b54e9f" class="image"><a href="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/ezgif.com-gif-maker_(3).gif"><img style="width:384px" src="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/ezgif.com-gif-maker_(3).gif"/></a></figure></div></div><p id="fb1b3c20-9041-41f4-b898-4de245fc657a" class=""><em>Thanks to anyone who takes the time to enjoy our little mod. </em>
+</p><h1 id="680d1883-1c2d-4be0-b743-1750e867d74f" class="">How to download and install. </h1><p id="55673f63-50d7-466f-9f60-d6053d7d3f3c" class=""><strong>Downloading</strong>- This mod is currently split between myself and SD805, and we will soon be aligning on a combined place for releases. 
+
+<strong>Part 1)</strong> <a href="https://github.com/sd805/l4d2vr/releases/latest">Get SD805’s latest release here</a></p><p id="182aebb3-b146-4734-806f-e95c46b92939" class=""><strong>Part 2) </strong><a href="https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster/">Snag my latest release here</a></p><p id="a6f4f18e-fada-43a1-921b-48832d3c1aca" class="">These two mods work in tandem. <strong>If you wish to automatically install the mod, </strong><a href="https://www.notion.so/L4D2-VR-Getting-Started-b2f19e3e4e514bcaababd6591fd9cde9"><strong>skip to 3b)</strong></a><a href="https://www.notion.so/L4D2-VR-Getting-Started-b2f19e3e4e514bcaababd6591fd9cde9"> below. </a></p><div id="ca1bb22a-f7c7-4870-a74c-5f4f06c80ee6" class="column-list"><div id="fd1f5603-b07b-4e4d-8227-46d52c777c87" style="width:50%" class="column"><p id="f55a832b-574b-4c06-b38b-69aab369917a" class=""> <strong>Part 3a) </strong>Manually installing both mods is a simple drag and drop operation, finished by setting up launch options. 
+</p><p id="bb256006-7610-4acf-8147-f728af352dea" class="">Take all files in both releases and locate your game directory.</p></div><div id="50f70674-cf0b-4e59-b595-17599a57278f" style="width:50%" class="column"><figure id="e8f6459c-80d4-47e3-8150-bcf932e2622b" class="image"><a href="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/1.png"><img style="width:1162px" src="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/1.png"/></a></figure></div></div><p id="4a135d86-525d-4762-b530-305137996e3d" class=""> </p><p id="1b5b405d-6756-41ea-a115-baae6b0e2d74" class="">
+</p><p id="68b2e0f9-2f5b-4bec-9c81-05db4717e31d" class=""><strong>For my half, find the “install” folder </strong>and then find<strong> “Drop these files into the game directory”</strong>. These will include both mine and SD805’s mods. You can also use the self extracting “install” zip. 
+</p><figure id="832b7da9-fb9b-4578-956d-d41fd97ec91d" class="image"><a href="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/Untitled.png"><img style="width:1153px" src="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/Untitled.png"/></a></figure><p id="82d25061-4ef8-4741-b1f1-c2cce3d86b9f" class=""><strong>Part 3b) Using the Installer - </strong>
+If you are manually installing files, you can skip ahead to Launch options or step 4 below. 
+The main file in my release serves as an installer and launcher.  “Left 4 Dead 2 VR Launcher and Installer” can be found in the main release file. </p><p id="f4313f83-e012-4e4d-b616-f132ffe84d7f" class=""><strong>Install-Mod button</strong></p><figure id="e957783c-a10e-4b61-8bb0-1491c48b996e" class="image"><a href="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/Untitled%201.png"><img style="width:1447px" src="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/Untitled%201.png"/></a></figure><p id="2695d3c5-64e7-448e-925f-4a26d7711a2b" class="">This tool will serve to install the game and be a launcher after installed. </p><p id="1e271924-7170-497f-bdd2-6498bbcf4b69" class=""><strong>4) </strong>Everyone should now be installed, <em>make sure to save the “Installer and Launcher” folder</em>, store it somewhere safe and create a desktop shortcut to use as a L4D2VR designated launcher. </p><p id="554fec04-7b68-4b72-aa8a-a2145a5f42a7" class=""><strong>5) </strong>Setting launch options is last, then its time to play. Almost there. <div class="indented"><p id="316dc9d1-2598-42ae-94dd-29d3bb321742" class=""> Copy these commands and right click on left4dead2 in your steam library, and click properties. At the bottom paste:</p><pre id="8a624332-0130-44f8-9b63-3e28302f29b8" class="code code-wrap"><code>-insecure -console +exec autoexec.cfg -precache_all_survivors 1 -useallavailablecores -window -novid -mat_motion_blur_percent_of_screen_max 0 -refresh 120 -vphysics_client_threaded_min_cpus 4 vphysics_client_threaded 1 </code></pre><p id="59e90417-07ec-4879-ad06-9610a3ad88fe" class="">
+</p><p id="c2cca451-4a82-4f29-abba-b0fe27754abc" class="">
+</p><p id="bb7171e2-fd05-4395-a59d-7ea5ee39dff6" class=""><strong>6)</strong> Now you can open the SteamVR app, and disable SteamVR Theater for L4D2, within the same menu.
+
+</p><p id="a4582308-e838-4be4-8b07-c1a08305429f" class="">Your settings should be appropriately set for you, aside from resolution. Your settings should look like this: </p></div></p><figure id="45a38dc2-56a6-40e5-a174-664e22c6ad1e" class="image"><a href="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/Untitled%202.png"><img style="width:1298px" src="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/Untitled%202.png"/></a></figure><div id="b0b1fbc9-ad3d-4cdd-9743-dccb29303db3" class="column-list"><div id="f5061eb5-5a2e-42ff-b311-a0d92c796cc2" style="width:43.75%" class="column"><h2 id="28649a9f-c5ea-4691-aafe-647c4714b5db" class=""><details open=""><summary><strong>HOW TO PLAY</strong></summary></details></h2><div class="indented"><p id="45f09a93-7e3d-4e22-9844-a685de437fee" class="">
+</p><p id="b8f7f09e-c3ed-4f82-a0f7-c2d5729382f3" class="">The moment you’ve been waiting for. 
+
+Once you’ve completed setup, use the “<strong>L4D2VR Launcher and Installer</strong>” to start the game. 
+
+Currently - navigating the menu isn’t fully done in-display. But! You don’t have to leave your headset for the keyboard. 
+</p><p id="4c53dbb2-cf1d-4e0b-b495-19f058cac835" class="">On the left it says launch game at the top, and on the right it says engage VR. 
+</p><p id="57b3aa10-58b0-4c60-a8bf-c82bf763e0b3" class=""><strong>1)</strong> Start in SteamVR Desktop Viewer.
+<strong>2) </strong>Select Launch Game from L4D2VR Menu.
+<strong>3)</strong> Leave the popup open, and navigate the L4D2 menu via SteamVR Desktop Viewer. 
+<strong>4)</strong> When you select a map, and the loading screen has finished, click the “Okay” button from the popup. Alternately, you can press “A” on the controller. 
+
+
+Welcome to <strong>L</strong>eftVRDead2. 
+
+Currently, I have not run across a mod that doesn’t work with the game. Feel free to test the limits. And make sure you provide  feedback!  
+
+</p><p id="6e8677ef-4849-484b-a507-e9ad226accd2" class="">
+</p><p id="8e48ee9e-6bf9-4226-90b2-187a8b4bfe27" class="block-color-yellow_background">
+Credits: <strong>
+</strong><a href="https://github.com/sd805/l4d2vr">https://github.com/sd805/l4d2vr</a>
+
+<a href="https://github.com/sd805">sd805</a>/<a href="https://github.com/sd805/l4d2vr"><strong>l4d2vr</strong></a><strong>  
+
+</strong><a href="https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster">https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster</a> </p><p id="869e7fe4-ef24-47ac-b2da-0bc43a56959e" class=""><a href="https://github.com/samfisherirl/Left4Dead2VR_HD_Remaster"><strong>Left4Dead2VR_HD_Remaster</strong></a><strong>
+</strong></p></div></div><div id="998a4e3d-2531-4c17-8ab3-ee2766951275" style="width:56.25%" class="column"><figure id="ce8f9dd4-f2cc-43a2-b13b-d9b25ce9af5a" class="image"><a href="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/Untitled%203.png"><img style="width:727px" src="L4D2%20VR%20Getting%20Started%20ceb6d70460a84e7186c9cf24d633514b/Untitled%203.png"/></a></figure><p id="9dd0331f-a007-4b35-9fac-410b8f2253fa" class="">
+<strong>Optional but highly encouraged hd textures downloads, otherwise the game is just optimized for low end pc.</strong></p><ul id="2799a693-5c66-4b29-9eb6-38907690e185" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.nexusmods.com/left4dead2/mods/84?tab=files&amp;file_id=132">HD Retexture pack</a></li></ul><ul id="515ecddc-c61b-4d6c-8a80-aabe8be7f923" class="bulleted-list"><li style="list-style-type:disc">This takes forever to download so I uploaded to <a href="https://drive.google.com/file/d/1OZ03HK9a5lNiir3I9vPcJLxOqWUDNNBj/view?usp=sharing">my drive</a> here.</li></ul><p id="b0b500ef-025e-4c2f-8f6b-cfcf67ce51c6" class="">steam mod download tool <a href="https://steamworkshopdownloader.io/">https://steamworkshopdownloader.io/</a></p><ul id="42972457-0d82-4a29-9fbb-d192f0c2041e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1985083323">https://steamcommunity.com/sharedfiles/filedetails/?id=1985083323</a></li></ul><ul id="5f7fbdd9-7e5e-4797-91f5-e4ca581714b3" class="bulleted-list"><li style="list-style-type:disc">Environment (Part 1 of 2) [ 4k / Full HD ]</li></ul><ul id="444b39e4-5374-4b32-ab83-7f286478d983" class="bulleted-list"><li style="list-style-type:disc"><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=312294075&amp;searchtext=">https://steamcommunity.com/sharedfiles/filedetails/?id=312294075&amp;searchtext=</a></li></ul><p id="14801144-0641-4636-a4d3-b4efbe6885a4" class="">in game settings (1080p, 2k, 4kw works):</p><p id="1e117e63-3a94-4220-9fb0-f30c354e8797" class="">
+</p></div></div></div></article></body></html>
