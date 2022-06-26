@@ -1,1 +1,1 @@
-start "" "Left 4 Dead 2 VR.url" -windowed -width 1200
+start "" "l4d2.url" -windowed -width 1200
